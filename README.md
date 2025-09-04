@@ -5,6 +5,8 @@
 O Consulado Digital é um sistema de banco de dados desenvolvido para gerenciar o processo de solicitação e emissão de vistos em um consulado.  
 Ele organiza as informações de solicitantes, passaportes, vistos, entrevistas e funcionários consulares, garantindo rastreabilidade e segurança em cada etapa do processo.
 
+--- 
+
 Este projeto tem como objetivo modelar as entidades e os relacionamentos necessários para acompanhar o fluxo de emissão de vistos, desde a solicitação inicial até a aprovação ou recusa.
 
 ---
@@ -24,12 +26,13 @@ O sistema cobre as seguintes operações:
 Representa a pessoa que solicita o visto.  
 Atributos principais:
 - ID_Solicitante (PK)
-- Nome completo
+- Nome
 - Data de nascimento
 - Nacionalidade
 - Endereço
 - Contato (telefone/email)
-
+- ID_Passaporte (FK)
+  
  2. **Passaporte**
 Documento oficial do solicitante.  
 Atributos principais:
@@ -103,5 +106,4 @@ Tabela associativa que representa a participação de funcionários em entrevist
 ## Autores
 - Pedro Armengol de Oliveira - GEC - 2093  
 - João Victor Batista Costa - GEC - 2107  
-
 ---
