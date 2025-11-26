@@ -46,7 +46,8 @@ CREATE TABLE funcionario (
     nome VARCHAR(100) NOT NULL,
     cargo VARCHAR(50),
     departamento VARCHAR(50),
-    contato VARCHAR(100)
+    contato VARCHAR(100),
+    Salario DECIMAL(10,2) DEFAULT 0.00
 );
 -- TABELA: Funcionário_Entrevista
 CREATE TABLE funcionario_entrevista (
