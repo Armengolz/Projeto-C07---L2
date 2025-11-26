@@ -10,6 +10,7 @@ CREATE TABLE passaporte (
     data_validade DATE NOT NULL,
     pais_emissor VARCHAR(50)
 );
+
 -- TABELA: Solicitante
 CREATE TABLE solicitante (
     id_solicitante INT AUTO_INCREMENT PRIMARY KEY,    
@@ -20,7 +21,10 @@ CREATE TABLE solicitante (
     contato VARCHAR(100),
     id_passaporte INT NOT NULL,                      
     FOREIGN KEY (id_passaporte) REFERENCES passaporte(id_passaporte)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
 );
+
 -- TABELA: Visto
 CREATE TABLE visto (
     id_visto INT AUTO_INCREMENT PRIMARY KEY,          
@@ -29,7 +33,10 @@ CREATE TABLE visto (
     status VARCHAR(20),
     id_solicitante INT NOT NULL,                      
     FOREIGN KEY (id_solicitante) REFERENCES solicitante(id_solicitante)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
 );
+
 -- TABELA: Entrevista
 CREATE TABLE entrevista (
     id_entrevista INT AUTO_INCREMENT PRIMARY KEY,     
@@ -38,6 +45,8 @@ CREATE TABLE entrevista (
     observacoes TEXT,
     id_visto INT NOT NULL,                            
     FOREIGN KEY (id_visto) REFERENCES visto(id_visto)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
 );
 
 -- TABELA: Funcionário
@@ -49,6 +58,7 @@ CREATE TABLE funcionario (
     contato VARCHAR(100),
     Salario DECIMAL(10,2) DEFAULT 0.00
 );
+
 -- TABELA: Funcionário_Entrevista
 CREATE TABLE funcionario_entrevista (
     id_funcionario INT NOT NULL,                      
@@ -61,6 +71,7 @@ CREATE TABLE funcionario_entrevista (
         ON DELETE CASCADE
         ON UPDATE CASCADE
 );
+
 -- Inserts de 3 instâncias por tabela
 INSERT INTO passaporte (numero_passaporte, data_emissao, data_validade, pais_emissor)
 VALUES
